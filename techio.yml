@@ -1,4 +1,4 @@
 title: Simple C Template
 plan:
 - title: C Snippet
-  statement: statement.md
+  statement: lessons/lesson1.md
