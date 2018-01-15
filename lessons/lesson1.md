@@ -62,14 +62,19 @@ void f(int p)
 	printf("The address of p inside f() is %u or %p\n", &p, &p);
 }
 
+void g(int p)
+{
+	printf("The address of p inside g() is %u or %p\n", &p, &p);
+	f(p);
+}
+
 int main()
 {
 	int a = 55;
 
 	printf("The address of a inside main() is %u or %p\n", &a, &a);
 	f(a);
-	f(a);
-	f(a);
+	g(a);
 
 	return 0;
 }
