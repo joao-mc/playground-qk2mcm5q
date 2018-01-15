@@ -21,5 +21,34 @@ int main()
 }
 ```
 
-An address is a non-negative integer. Each time a program is run the variables may or may not be located in same memory locations. Each time you run the program above may or may not result in the same output.
+An address is a non-negative integer. Each time a program is run the variables may or may not be located in same memory locations. Each time you run the program above may or may not result in the same output. But for a specific instance of the running program (also known as process) the variables will always have same address.
+
+There is another format specifier that can be used to `printf()` to output variable address - `%p`. But how `%p` will display an address is **implementation defined**. It means that the output of `%p` varies from compiler to compiler.
+
+Try the following program:
+
+```C runnable
+#include <stdio.h>
+
+int main()
+{
+	int a = 55, b = 66, c = 77;
+
+	printf("The address of a before is %u or %p\n", &a);
+	printf("The address of b before is %u or %p\n", &b);
+	printf("The address of c before is %u or %p\n", &c);
+
+	a++;
+	b++;
+	c++;
+
+	printf("The address of a before is %u or %p\n", &a);
+	printf("The address of b before is %u or %p\n", &b);
+	printf("The address of c before is %u or %p\n", &c);
+
+	return 0;
+}
+
+```
+
 
