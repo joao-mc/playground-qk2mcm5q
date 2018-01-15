@@ -19,6 +19,29 @@ int main()
 
 `int *pa = &a;` can be stated like `pa` is a pointer to an integer. `pa` points to `a`. Just like `a` has a content (55), `pa` has a content (that's the address of `a`). As `pa` itself is a variable, it has an address too.
 
+In another terminology, `pa` is a reference to `a`. The content of `a` can be obtained using `pa`. This is called dereferencing a pointer. It is performed by putting a `*` before the pointer variable as seen in the example below:
+
+```C runnable
+#include <stdio.h>
+
+int main()
+{
+	int a = 55;
+	int *pa = &a;
+
+	printf("The address of a is %u or %p\n", &a, &a);
+	printf("The content of a is %d\n", a);
+	printf("The content of pa is %u or %p\n", pa, pa);
+	printf("The address of pa is %u or %p\n", &pa, &pa);
+	printf("The content of content of pa is %d\n", *pa);
+	printf("The content of address of a is %d\n", *(&a));
+
+	return 0;
+}
+```
+
+As you can see, `*pa == a`. Because `pa == &a`, we can also write `*(&a)` to get the content of `a`.
+
 The declaration and assignment of a pointer can take place in different statements:
 
 ```C
