@@ -1,6 +1,6 @@
 title: How to play with pointers in C
 plan:
-- title: C Snippet
+- title: Address Of A Variable
   statement: lessons/lesson1.md
 - title: C Snippet
   statement: lessons/lesson2.md
