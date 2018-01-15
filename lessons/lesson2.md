@@ -17,3 +17,14 @@ int main()
 }
 ```
 
+`int *pa = &a;` can be stated like `pa` is a pointer to an integer. `pa` points to `a`. Just like `a` has a content (55), `pa` has a content (that's the address of `a`). As `pa` itself is a variable, it has an address too.
+
+The declaration and assignment of a pointer can take place in different statements:
+
+```C
+int *pa;
+pa = &a;
+```
+
+It will produce the same result as the example before it.
+
