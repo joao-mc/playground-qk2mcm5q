@@ -50,3 +50,12 @@ int main()
 }
 ```
 
+Explanation in words:
+
+```
+arr + 0 = address of 1st element of array arr
+arr + 1 = address of 2nd element of array arr
+arr + 2 = address of 3rd element of array arr
+...
+arr + n = address of (n + 1)-st element of array arr
+```
