@@ -2,3 +2,5 @@ title: How to play with pointers in C
 plan:
 - title: C Snippet
   statement: lessons/lesson1.md
+- title: C Snippet
+  statement: lessons/lesson2.md
