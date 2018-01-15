@@ -34,21 +34,20 @@ int main()
 {
 	int a = 55, b = 66, c = 77;
 
-	printf("The address of a before is %u or %p\n", &a);
-	printf("The address of b before is %u or %p\n", &b);
-	printf("The address of c before is %u or %p\n", &c);
+	printf("The address of a before is %u or %p\n", &a, &a);
+	printf("The address of b before is %u or %p\n", &b, &b);
+	printf("The address of c before is %u or %p\n", &c, &c);
 
 	a++;
 	b++;
 	c++;
 
-	printf("The address of a before is %u or %p\n", &a);
-	printf("The address of b before is %u or %p\n", &b);
-	printf("The address of c before is %u or %p\n", &c);
+	printf("\nThe address of a after is %u or %p\n", &a, &a);
+	printf("The address of b after is %u or %p\n", &b, &b);
+	printf("The address of c after is %u or %p\n", &c, &c);
 
 	return 0;
 }
-
 ```
 
 
