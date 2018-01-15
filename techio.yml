@@ -2,5 +2,5 @@ title: How to play with pointers in C
 plan:
 - title: Address Of A Variable
   statement: lessons/lesson1.md
-- title: C Snippet
+- title: A Pointer Is A Variable
   statement: lessons/lesson2.md
