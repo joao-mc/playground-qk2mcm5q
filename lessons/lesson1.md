@@ -80,5 +80,5 @@ int main()
 }
 ```
 
-Now `&p` may or may not be the same for every call to `f()`. However, `a` and `p` are strictly two different variables. They are allocated in different memory locations. Therefore address of `a` and address of `p` will never be the same (`&a != &p`). The same is true for `a` and `r`. They live in the same time in different addresses.
+Now `&p` may or may not be the same for every call to `f()`. However, `a` and `p` are strictly two different variables. They are allocated in different memory locations. Therefore address of `a` and address of `p` will never be the same (`&a != &p`). The same is true for `a` and `r`. They live in the same time in different addresses. When `f()` is called from within `g()`, then `&r != &p` because they both live at the same time. But when `f()` is called from outside `g()`, there is no relation between `&r` and `&p` - they could be same or different.
 
