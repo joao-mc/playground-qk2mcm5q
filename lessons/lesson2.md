@@ -19,7 +19,7 @@ int main()
 
 `int *pa = &a;` can be stated like `pa` is a pointer to an integer. `pa` points to `a`. Just like `a` has a content (55), `pa` has a content (that's the address of `a`). As `pa` itself is a variable, it has an address too.
 
-In another terminology, `pa` is a reference to `a`. The content of `a` can be obtained using `pa`. This is called dereferencing a pointer. It is performed by putting a `*` before the pointer variable as seen in the example below:
+The content of `a` can be obtained using `pa`. This is called **dereferencing** a pointer. It is performed by putting a `*` before the pointer variable as seen in the example below:
 
 ```C runnable
 #include <stdio.h>
@@ -33,8 +33,8 @@ int main()
 	printf("The content of a is %d\n", a);
 	printf("The content of pa is %u or %p\n", pa, pa);
 	printf("The address of pa is %u or %p\n", &pa, &pa);
-	printf("The content of content of pa is %d\n", *pa);
-	printf("The content of address of a is %d\n", *(&a));
+	printf("The content of content of pa is %d\n", *pa); /* Dereference */
+	printf("The content of address of a is %d\n", *(&a)); /* Dereference */
 
 	return 0;
 }
@@ -50,4 +50,17 @@ pa = &a;
 ```
 
 It will produce the same result as the example before it.
+
+It is dangerous to leave a pointer without pointing anything. This kind of pointer is called **dangling pointer**. Reading or dereferencing a dangling pointer results in undefined behaviour:
+
+```C
+int *pa;
+
+/* Fatal: reading uninitialized variable - undefined behaviour */
+/* printf("The content of pa is %u or %p\n", pa, pa); */
+
+/* Fatal: dereferencing dangling pointer - undefined behaviour */
+/* printf("The dereferenced value of pa is %d\n", *pa); */
+```
+
 
