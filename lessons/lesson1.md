@@ -15,7 +15,7 @@ int main()
 {
 	int a = 55;
 
-	printf("The address of a is %d", &a);
+	printf("The address of a is %u", &a);
 
 	return 0;
 }
