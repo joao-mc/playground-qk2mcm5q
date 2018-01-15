@@ -21,3 +21,5 @@ int main()
 	return 0;
 }
 ```
+
+Notice that each array element is 4 bytes long and takes contiguous memory locations. If `&arr[0]` is 10, then `&arr[1]` is 14, and so on. Do you know that replacing `&arr[i]` with `&i[arr]` also works in the example above? Try this! **Caution:** Try this for fun. Don't put `&i[arr]` in your final code of your coding project as `&i[arr]` is less intuitive to get the address of the `i`-th element in array `arr`.
