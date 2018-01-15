@@ -4,3 +4,5 @@ plan:
   statement: lessons/lesson1.md
 - title: A Pointer Is A Variable
   statement: lessons/lesson2.md
+- title: Pointer And Array
+  statement: lessons/lesson3.md
