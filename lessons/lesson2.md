@@ -74,8 +74,9 @@ int main()
 	int *pa = &a;		/* A pointer to an integer */
 	int **ppa = &pa;	/* A pointer to a pointer to an integer */
 
+    printf("The content of a is %d\n", a);
 	printf("The address of a is %u or %p\n", &a, &a);
-	printf("The content of a is %d\n", a);
+
 	printf("The content of pa is %u or %p\n", pa, pa);
 	printf("The address of pa is %u or %p\n", &pa, &pa);
 	printf("The dereferenced value of pa is %d\n", *pa);
