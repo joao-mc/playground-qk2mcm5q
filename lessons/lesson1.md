@@ -1,5 +1,3 @@
-# Address Of A Variable
-
 A program being executed by a processor has two major parts - the code and the data. The code section is the code you've written and the data section holds the variables you're using in the program.
 
 All code and variables are loaded into memory (usually RAM) and the processor executes the code from there. Each segment (usually a byte) in the memory has an address - whether it holds code or variable - that's the way for the processor to access the code and variables.
