@@ -23,3 +23,30 @@ int main()
 ```
 
 Notice that each array element is 4 bytes long and takes contiguous memory locations. If `&arr[0]` is 10, then `&arr[1]` is 14, and so on. Do you know that replacing `&arr[i]` with `&i[arr]` also works in the example above? Try this! **Caution:** Try this for fun. Don't put `&i[arr]` in your final code of your coding project as `&i[arr]` is less intuitive to get the address of the `i`-th element in array `arr`.
+
+It works because for compiler `arr[i]` and `i[arr]` are same operation. Compiler converts `arr[i]` to `arr + i` and similarly `i[arr]` to `i + arr`. Since `arr + i` and `i + arr` produce same result, so do `arr[i]` and `i[arr]`.
+
+What does `arr + i` mean? It is the address of the `i`-th element of the memory location pointed to by `arr`. This sounds like `arr` is a pointer. In fact, an array name in C is a pointer to the first element of the array!
+
+Try the following example and notice that `&arr[i]` and `arr + i` are producing the same address:
+
+```C runnable
+#include <stdio.h>
+#include <stdint.h>
+
+#define ARRAY_SIZE 3
+
+int main()
+{
+	int32_t arr[ARRAY_SIZE] = { 22, 33, 44 };
+
+	printf("Addresses of array elements:\n");
+	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		printf("Index %d: %u | %u\n", i, &arr[i], arr + i);
+	}
+
+	return 0;
+}
+```
+
