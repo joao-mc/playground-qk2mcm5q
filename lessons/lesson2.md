@@ -1,4 +1,4 @@
-C has a type of variable which can store address or memory location. This type of variable is called a pointer. Essentially a pointer holds address of a variable. To indicate a variable as a pointer, `*` is used before the variable name as seen in the example below:
+C has a type of variable which can store address or memory location. This type of variable is called a pointer. Essentially a pointer holds address of a variable. To declare a variable as a pointer, `*` is used before the variable name as seen in the example below:
 
 ```C runnable
 #include <stdio.h>
