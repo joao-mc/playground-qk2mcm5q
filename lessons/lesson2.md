@@ -89,4 +89,20 @@ int main()
 }
 ```
 
+In words:
+
+**Referencing/pointing**
+
+```
+address of a  == content of pa
+address of pa == content of ppa
+```
+
+**Dereferencing**
+
+```
+dereferenced value of ppa   == content of pa
+dereferenced value of pa    == content of a
+double dereferencing of ppa == content of a
+```
 
