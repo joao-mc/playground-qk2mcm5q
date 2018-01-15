@@ -63,7 +63,7 @@ int *pa;
 /* printf("The dereferenced value of pa is %d\n", *pa); */
 ```
 
-Since pointers are themselves variables, there can be pointer which points to another pointer! Observe the following example:
+Since pointers are themselves variables, there can be pointer which points to another pointer! Run and observe the output of the following example:
 
 ```C runnable
 #include <stdio.h>
