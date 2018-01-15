@@ -23,7 +23,7 @@ int main()
 
 An address is a non-negative integer. Each time a program is run the variables may or may not be located in same memory locations. Each time you run the program above may or may not result in the same output. But for a specific instance of the running program (also known as process) the variables will always have same address.
 
-There is another format specifier that can be used to `printf()` to output variable address - `%p`. But how `%p` will display an address is **implementation defined**. It means that the output of `%p` varies from compiler to compiler.
+There is another format specifier that can be used to `printf()` to output address - `%p`. But how `%p` will display an address is **implementation defined**. It means that the output of `%p` varies from compiler to compiler.
 
 Try the following program:
 
