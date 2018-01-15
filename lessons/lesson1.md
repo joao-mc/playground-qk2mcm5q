@@ -21,7 +21,7 @@ int main()
 }
 ```
 
-An address is a non-negative integer. Each time a program is run the variables may or may not be located in same memory locations. Each time you run the program above may or may not result in the same output. But for a specific instance of the running program (also known as process) the variables will always have same address.
+An address is a non-negative integer. Each time a program is run the variables may or may not be located in same memory locations. Each time you run the program above may or may not result in the same output. But for a specific instance of the running program (also known as process) the variables in the **same scope** will always have same address.
 
 There is another format specifier that can be used to `printf()` to output address - `%p`. But how `%p` will display an address is **implementation defined**. It means that the output of `%p` varies from compiler to compiler.
 
@@ -50,4 +50,30 @@ int main()
 }
 ```
 
+Notice that the addresses of `a`, `b` and `c` variables are same before and after the modification.
+
+However, if the variables are in **differenct scope** then the address may or may not be the same in different execution of that scope. For example, consider the following program where `f()` is called several times. Each call to `f()` produces a different scope for its parameter `p`.
+
+```C runnable
+#include <stdio.h>
+
+void f(int p)
+{
+	printf("The address of p inside f() is %u or %p\n", &p, &p);
+}
+
+int main()
+{
+	int a = 55;
+
+	printf("The address of a inside main() is %u or %p\n", &a, &a);
+	f(a);
+	f(a);
+	f(a);
+
+	return 0;
+}
+```
+
+Now `&p` may or may not be the same for every call to `f()`. However, `a` and `p` are strictly two different variables. They are allocated in different memory locations. Therefore address of `a` and address of `p` will never be the same (`&a != &p`).
 
