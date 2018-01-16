@@ -13,7 +13,7 @@ int main()
 {
 	int a = 55;
 
-	printf("The address of a is %u", &a);
+	printf("The address of a is %llu", &a);
 
 	return 0;
 }
@@ -32,17 +32,17 @@ int main()
 {
 	int a = 55, b = 66, c = 77;
 
-	printf("The address of a before is %u or %p\n", &a, &a);
-	printf("The address of b before is %u or %p\n", &b, &b);
-	printf("The address of c before is %u or %p\n", &c, &c);
+	printf("The address of a before is %llu or %p\n", &a, &a);
+	printf("The address of b before is %llu or %p\n", &b, &b);
+	printf("The address of c before is %llu or %p\n", &c, &c);
 
 	a++;
 	b++;
 	c++;
 
-	printf("\nThe address of a after is %u or %p\n", &a, &a);
-	printf("The address of b after is %u or %p\n", &b, &b);
-	printf("The address of c after is %u or %p\n", &c, &c);
+	printf("\nThe address of a after is %llu or %p\n", &a, &a);
+	printf("The address of b after is %llu or %p\n", &b, &b);
+	printf("The address of c after is %llu or %p\n", &c, &c);
 
 	return 0;
 }
@@ -57,12 +57,12 @@ However, if the variables are in **differenct scope** then the address may or ma
 
 void f(int p)
 {
-	printf("The address of p inside f() is %u or %p\n", &p, &p);
+	printf("The address of p inside f() is %llu or %p\n", &p, &p);
 }
 
 void g(int r)
 {
-	printf("The address of r inside g() is %u or %p\n", &r, &r);
+	printf("The address of r inside g() is %llu or %p\n", &r, &r);
 	f(r);
 }
 
@@ -70,7 +70,7 @@ int main()
 {
 	int a = 55;
 
-	printf("The address of a inside main() is %u or %p\n", &a, &a);
+	printf("The address of a inside main() is %llu or %p\n", &a, &a);
 	f(a);
 	g(a);
 
