@@ -57,7 +57,7 @@ int main()
 	int32_t *p = arr; /* p points to the first element of arr */
 	for (int i = 0; i < ARRAY_SIZE; i++)
 	{
-		printf("Modifying content of address %u\n", p); /* Current address p is holding */
+		printf("Modifying content of address %p\n", p); /* Current address p is holding */
 		*p *= *p; /* Squaring the content pointed to by p (eg., 3 becomes 9) */
 		p++; /* Increamenting the content of p, points to the next element of the array */
 	}
@@ -65,7 +65,7 @@ int main()
 	printf("Array elements' address and content after modification:\n");
 	for (int i = 0; i < ARRAY_SIZE; i++)
 	{
-		printf("%u | %d\n", arr + i, arr[i]);
+		printf("%p | %d\n", arr + i, arr[i]);
 	}
 
 	return 0;
