@@ -89,7 +89,7 @@ address:     10   14   18   22
              p
 ```
 
-A loop iteration `ARRAY_SIZE` times. In each iteration `*p` is multiplied by `*p` - the dereferenced value of `p` is squared - and stored in the memory location pointed to by `p` by the statement `*p *= *p;`. This modifies one array element in every iteration. The next statement, `p++;`, increments the pointer `p`, not by 1, but by `sizeof(*p)` - in this case 4 at a time.
+A loop iterates `ARRAY_SIZE` times. In each iteration `*p` is multiplied by `*p` - the dereferenced value of `p` is squared - and stored in the memory location pointed to by `p` by the statement `*p *= *p;`. This modifies one array element in every iteration. The next statement, `p++;`, increments the pointer `p`, not by 1, but by `sizeof(*p)` - in this case 4 at a time.
 
 In the hypothetical address above:
 
