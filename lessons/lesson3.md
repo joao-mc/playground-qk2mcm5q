@@ -26,7 +26,7 @@ Notice that each array element is 4 bytes long and takes contiguous memory locat
 
 It works because for compiler `arr[i]` and `i[arr]` are same operation. Compiler converts `arr[i]` to `arr + i` and similarly `i[arr]` to `i + arr`. Since `arr + i` and `i + arr` produce same result, so do `arr[i]` and `i[arr]`.
 
-What does `arr + i` mean? It is the address of the `i`-th element of the memory location pointed to by `arr`. This sounds like `arr` is a pointer. In fact, an array name in C is a pointer to the first element of the array!
+What does `arr + i` mean? It is the address of the `i`-th element of the memory location pointed to by `arr`. This sounds like `arr` is a pointer. In fact, an array name in C acts as a pointer to the first element of the array!
 
 Try the following example and notice that `&arr[i]` and `arr + i` are producing the same address:
 
