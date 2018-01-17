@@ -57,7 +57,7 @@ It will produce the same result as the example before it.
 int *pa;
 
 /* Fatal: reading uninitialized variable - undefined behaviour */
-/* printf("The content of pa is %u or %p\n", pa, pa); */
+/* printf("The content of pa is %p\n", pa); */
 
 /* Fatal: dereferencing dangling pointer - undefined behaviour */
 /* printf("The dereferenced value of pa is %d\n", *pa); */
