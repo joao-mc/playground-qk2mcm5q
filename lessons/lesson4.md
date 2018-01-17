@@ -124,3 +124,20 @@ int main()
 }
 ```
 
+Notice that p increments by 2, or `sizeof(int16_t)`, at every iteration.
+
+**Warning:** When the loop exits in the above example, `p` points to one past the last element of `arr`. That area is outside the declared variables in the program. Accessing that location is undefined behaviour.
+
+```C
+int16_t arr[ARRAY_SIZE] = { 0 };
+int16_t *p = arr;
+
+for (int i = 0; i < ARRAY_SIZE; i++)
+{
+    printf("%p\n", p);
+	p++;
+}
+
+/* printf("%p\n", p); */ /* Fatal: p points to outside location of declared variable - undefined behaviour */
+```
+
