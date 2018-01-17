@@ -51,7 +51,7 @@ int main()
 	printf("Array elements' address and content before modification:\n");
 	for (int i = 0; i < ARRAY_SIZE; i++)
 	{
-		printf("%u | %d\n", arr + i, arr[i]);
+		printf("%p | %d\n", arr + i, arr[i]);
 	}
 
 	int32_t *p = arr; /* p points to the first element of arr */
@@ -72,4 +72,55 @@ int main()
 }
 ```
 
-The example above incre
+This is what happens in the example above. `arr` is initialized as follows:
+
+```
+arr:         1    2    3    4
+address:     10   14   18   22
+```
+
+The address is hypothetical address. `p` points to the first element of `arr` by `int32_t *p = arr;`:
+
+```
+arr:         1    2    3    4
+address:     10   14   18   22
+             ^
+             |
+             p
+```
+
+A loop iteration `ARRAY_SIZE` times. In each iteration `*p` is multiplied by `*p` - the dereferenced value of `p` is squared - and stored in the memory location pointed to by `p` by the statement `*p *= *p;`. This modifies one array element in every iteration. The next statement, `p++;`, increments the pointer `p`, not by 1, but by `sizeof(*p)` - in this case 4 at a time.
+
+In the hypothetical address above:
+
+```
+before 1st iteration: p = 10
+after 1st iteration : p = 14
+after 2nd iteration : p = 18
+after 3rd iteration : p = 22
+after 4th iteration : p = 26
+```
+
+This can be verified by another small example where we consider 16 bit integer:
+
+```C runnable
+#include <stdio.h>
+#include <stdint.h>
+
+#define ARRAY_SIZE 4
+
+int main()
+{
+	int16_t arr[ARRAY_SIZE] = { 0 };
+	int16_t *p = arr;
+
+	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		printf("%p\n", p);
+		p++;
+	}
+
+	return 0;
+}
+```
+
