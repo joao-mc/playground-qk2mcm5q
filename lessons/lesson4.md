@@ -79,7 +79,7 @@ arr:         1    2    3    4
 address:     10   14   18   22
 ```
 
-The address is hypothetical address. `p` points to the first element of `arr` by `int32_t *p = arr;`:
+The address is hypothetical here. `p` points to the first element of `arr` by `int32_t *p = arr;`:
 
 ```
 arr:         1    2    3    4
