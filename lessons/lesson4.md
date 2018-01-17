@@ -101,7 +101,7 @@ after 3rd iteration : p = 22
 after 4th iteration : p = 26
 ```
 
-This can be verified by another small example where we consider 16 bit integer:
+This can be verified by another small example with 16 bit integer:
 
 ```C runnable
 #include <stdio.h>
