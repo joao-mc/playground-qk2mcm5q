@@ -51,7 +51,7 @@ pa = &a;
 
 It will produce the same result as the example before it.
 
-**Warning:** It is dangerous to leave a pointer without pointing anything. This kind of pointer is called **dangling pointer**. Reading or dereferencing a dangling pointer results in undefined behaviour:
+**Warning:** It is dangerous to leave a pointer without pointing anything. This kind of pointer is called **dangling pointer**. Reading or dereferencing a dangling pointer results in **undefined behaviour**:
 
 ```C
 int *pa;
@@ -62,6 +62,8 @@ int *pa;
 /* Fatal: dereferencing dangling pointer - undefined behaviour */
 /* printf("The dereferenced value of pa is %d\n", *pa); */
 ```
+
+An undefined behaviour means that when a compiler encounters anything that triggers undefined behaviour, it is allowed to do anything it seems appropriate. For maximum portability of your program, make sure to avoid any undefined behaviour.
 
 Since pointers are themselves variables, there can be pointer which points to another pointer! Run and observe the output of the following example:
 
