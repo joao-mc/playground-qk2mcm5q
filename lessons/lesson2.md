@@ -19,7 +19,7 @@ int main()
 
 A pointer is also called _reference type_ variable in generic way. `int *pa = &a;` can be stated like `pa` is a pointer to an integer. `pa` points to `a`. Just like `a` has a content (55), `pa` has a content (that's the address of `a`). As `pa` itself is a variable, it has an address too.
 
-The content of `a` can be obtained using `pa`. This is called **dereferencing** a pointer. It is performed by putting a `*` before the pointer variable as seen in the example below:
+The content of `a` can be obtained using `pa`. This is called **dereferencing** a pointer. Dereferencing a pointer can be performed by a `*` character before the pointer variable name as seen in the example below:
 
 ```C runnable
 #include <stdio.h>
