@@ -15,7 +15,7 @@ int main()
 	printf("Addresses of array elements:\n");
 	for (int i = 0; i < ARRAY_SIZE; i++)
 	{
-		printf("Index %d: %u\n", i, &arr[i]);
+		printf("Index %d: %p\n", i, &arr[i]);
 	}
 
 	return 0;
@@ -43,7 +43,7 @@ int main()
 	printf("Addresses of array elements:\n");
 	for (int i = 0; i < ARRAY_SIZE; i++)
 	{
-		printf("Index %d: %u | %u\n", i, &arr[i], arr + i);
+		printf("Index %d: %p | %p\n", i, &arr[i], arr + i);
 	}
 
 	return 0;
