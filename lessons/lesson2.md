@@ -8,10 +8,10 @@ int main()
 	int a = 55;
 	int *pa = &a;
 
-	printf("The address of a is %u or %p\n", &a, &a);
+	printf("The address of a is %p\n", &a);
 	printf("The content of a is %d\n", a);
-	printf("The content of pa is %u or %p\n", pa, pa);
-	printf("The address of pa is %u or %p\n", &pa, &pa);
+	printf("The content of pa is %p\n", pa);
+	printf("The address of pa is %p\n", &pa);
 
 	return 0;
 }
@@ -29,10 +29,10 @@ int main()
 	int a = 55;
 	int *pa = &a;
 
-	printf("The address of a is %u or %p\n", &a, &a);
+	printf("The address of a is %p\n", &a);
 	printf("The content of a is %d\n", a);
-	printf("The content of pa is %u or %p\n", pa, pa);
-	printf("The address of pa is %u or %p\n", &pa, &pa);
+	printf("The content of pa is %p\n", pa);
+	printf("The address of pa is %p\n", &pa);
 	printf("The content of content of pa is %d\n", *pa); /* Dereference */
 	printf("The content of address of a is %d\n", *(&a)); /* Dereference */
 
@@ -75,15 +75,15 @@ int main()
 	int **ppa = &pa;	/* A pointer to a pointer to an integer */
 
     printf("The content of a is %d\n", a);
-	printf("The address of a is %u or %p\n", &a, &a);
+	printf("The address of a is %p\n", &a);
 
-	printf("The content of pa is %u or %p\n", pa, pa);
-	printf("The address of pa is %u or %p\n", &pa, &pa);
+	printf("The content of pa is %p\n", pa);
+	printf("The address of pa is %p\n", &pa);
 	printf("The dereferenced value of pa is %d\n", *pa);
 
-	printf("The content of ppa is %u or %p\n", ppa, ppa);
-	printf("The address of ppa is %u or %p\n", &ppa, &ppa);
-	printf("The dereferenced value of ppa is %u or %p\n", *ppa, *ppa);
+	printf("The content of ppa is %p\n", ppa);
+	printf("The address of ppa is %p\n", &ppa);
+	printf("The dereferenced value of ppa is %p\n", *ppa);
 	printf("The content of a through ppa is %d\n", **ppa);
 
 	return 0;
