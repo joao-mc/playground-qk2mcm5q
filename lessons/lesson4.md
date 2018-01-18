@@ -6,24 +6,26 @@ Given an array `arr[ARRAY_SIZE]` we can get the address of the `i`-th element by
 
 #define ARRAY_SIZE 8
 
+void print_array(const int32_t arr[], int num_elements)
+{
+    for (int i = 0; i < num_elements; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+}
+
 int main()
 {
 	int32_t arr[ARRAY_SIZE] = { 22, 33, 44 };
 	int32_t *p = arr + 2;
 
 	printf("Array elements before modification: ");
-	for (int i = 0; i < ARRAY_SIZE; i++)
-	{
-		printf("%d ", arr[i]);
-	}
+	print_array(arr, ARRAY_SIZE);
 
 	*p = 55;
 
 	printf("\nArray elements after modification:  ");
-	for (int i = 0; i < ARRAY_SIZE; i++)
-	{
-		printf("%d ", arr[i]);
-	}
+	print_array(arr, ARRAY_SIZE);
 
 	return 0;
 }
