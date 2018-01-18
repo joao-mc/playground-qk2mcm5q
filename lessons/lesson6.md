@@ -48,7 +48,7 @@ int main()
 }
 ```
 
-You'll notice that the sizes are different in `main()` and `print_array_size()` even though _it appears that_ the same 12 byte array `arr` is passed to the `print_array_size()` function. Based on compiler settings, you could also see warning for using `sizeof` operator on parameter `parr`.
+You'll notice that the sizes are different in `main()` and `print_array_size()` even though _it appears that_ the same 12 byte array `arr` is passed to the `print_array_size()` function. Based on compiler settings, you could also see warning for using `sizeof` operator on parameter `parr` because `parr` is declared as array.
 
 When happens is when an array is passed to a function as parameter, it is _converted_ to a pointer to the first element of the array. In the example above, `parr` is indeed a pointer to `&arr[0]` even though array syntax (`[]`) is used.
 
@@ -56,5 +56,30 @@ Hence, `sizeof(parr)` returns the size of a pointer on the platform. The code ab
 
 ```C
 void print_array_size(const int32_t* parr)
+```
+
+An array can be passed to a function through pointer. Using the parameter which is a pointer to the array the array elements can be modified:
+
+```C runnable
+#include <stdio.h>
+#include <ctype.h>
+
+void string_to_upper(char *str)
+{
+	while (*str != NULL)
+	{
+		*str = to_upper(*str);
+		str++;
+	}
+}
+
+int main()
+{
+	char str[] = "a small string";
+	string_to_upper(str);
+	printf(str);
+
+	return 0;
+}
 ```
 
