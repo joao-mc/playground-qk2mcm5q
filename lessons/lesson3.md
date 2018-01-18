@@ -1,6 +1,6 @@
 An array is a contiguous memory location which holds data. The data can be integers, characters, floating point numbers, structures etc. Each array element takes a distinct memory location. They all have distinct address.
 
-In the following example, `int32_t` data type is used. `int32_t` represents 32 bit signed integer and is defined in `stdint.h` header file for supported compiler. While `int` data type doesn't guarantee about its size, `int32_t` is guaranteed to be 4 bytes long in every compiler that supports it. If your compiler doesn't support `int32_t` data type, try an integer type (`int`, `long`, `long long`) which is 32 bit wide. Although according to C standard compilers aren't forced to implement `int32_t` data type, to make the size of integers predictable, `int32_t` type is used in following examples in this tutorial.
+In the following example, `int32_t` data type is used. `int32_t` represents 32 bit signed integer and is defined in `stdint.h` header file for supported compiler. While `int` data type doesn't guarantee about its size, `int32_t` is guaranteed to be 4 bytes long in every compiler that supports it. If your compiler doesn't support `int32_t` data type, try an integer type (`int`, `long`, `long long`) which is 32 bit wide in your environment. Although according to C standard compilers aren't forced to implement `int32_t` data type, to make the size of integers predictable, `int32_t` type is used in following examples in this tutorial.
 
 ```C runnable
 #include <stdio.h>
