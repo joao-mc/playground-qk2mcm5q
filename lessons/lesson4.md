@@ -145,7 +145,7 @@ for (int i = 0; i < ARRAY_SIZE; i++)
 /* printf("%d\n", *p); */ /* Fatal: p points to outside location of declared variable - undefined behaviour */
 ```
 
-Just like `++` other arithmetic operators (`--`, `+=`, `-=`, `+`, `-`) work on pointers too as long as the pointer stays in the boundary of declared variables.
+Like `++`, other arithmetic operators (`--`, `+=`, `-=`, `+`, `-`) work on pointers too as long as the pointer stays in the boundary of declared variables.
 
 Following example output a string in reverse order:
 
