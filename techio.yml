@@ -10,5 +10,5 @@ plan:
   statement: lessons/lesson4.md
 - title: Pointer Arithmetic Part 2
   statement: lessons/lesson5.md
-- title: Lesson 6
+- title: Pointer In Function Parameter
   statement: lessons/lesson6.md
