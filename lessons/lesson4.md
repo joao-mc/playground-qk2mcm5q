@@ -142,7 +142,7 @@ for (int i = 0; i < ARRAY_SIZE; i++)
 	p++;
 }
 
-/* printf("%p\n", p); */ /* Fatal: p points to outside location of declared variable - undefined behaviour */
+/* printf("%d\n", *p); */ /* Fatal: p points to outside location of declared variable - undefined behaviour */
 ```
 
 Just like `++` other arithmetic operators (`--`, `+=`, `-=`, `+`, `-`) work on pointers too as long as the pointer stays in the boundary of declared variables.
