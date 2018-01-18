@@ -52,5 +52,9 @@ You'll notice that the sizes are different in `main()` and `print_array_size()` 
 
 When happens is when an array is passed to a function as parameter, it is _converted_ to a pointer to the first element of the array. In the example above, `parr` is indeed a pointer to `&arr[0]` even though array syntax (`[]`) is used.
 
-Hence, `sizeof(parr)` returns the size of a pointer on the platform.
+Hence, `sizeof(parr)` returns the size of a pointer on the platform. The code above will work the same way if the function prototype is declared as follows:
+
+```C
+void print_array_size(const int32_t* parr)
+```
 
