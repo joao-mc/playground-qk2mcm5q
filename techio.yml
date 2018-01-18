@@ -12,3 +12,5 @@ plan:
   statement: lessons/lesson5.md
 - title: Pointer In Function Parameter
   statement: lessons/lesson6.md
+- title: Dynamic Memory Allocation
+  statement: lessons/lesson7.md
