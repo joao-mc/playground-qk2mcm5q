@@ -28,20 +28,12 @@ Using subtraction operation between two pointers we can get how far the elements
 **Warning:** Care must be taken to make sure that the low address is always gets subtracted from the high address. Otherwise, the behaviour will be undefined as illustrated in the example below:
 
 ```C
-#include <stdio.h>
-#include <stddef.h>
-
 #define ARRAY_SIZE 10
 
-int main()
-{
-	int arr[ARRAY_SIZE] = { 0 };
+int arr[ARRAY_SIZE] = { 0 };
 
-	int *p = arr + 2;
-	int *q = arr + 6;
+int *p = arr + 2;
+int *q = arr + 6;
 
-	/* ptrdiff_t diff = p - q; */ /* Fatal: p - q < 0, it won't point within arr and the result may not fit in ptrdiff_t */
-
-	return 0;
-}
+/* ptrdiff_t diff = p - q; */ /* Fatal: p - q < 0, it won't point within arr and the result may not fit in ptrdiff_t */
 ```
