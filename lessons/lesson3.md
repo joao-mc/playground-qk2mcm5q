@@ -1,6 +1,6 @@
 An array is a contiguous memory location which holds data. The data can be integers, characters, floating point numbers, structures etc. Each array element takes a distinct memory location. They all have distinct address.
 
-In the following example, `int32_t` data type is used. `int32_t` represents 32 bit signed integer and is defined in `stdint.h` header file for supported compiler. While `int` data type doesn't guarantee about its size, `int32_t` is guaranteed to be 4 bytes long in every compiler that supports it. If your compiler doesn't support `int32_t` data type, try an integer type (`int`, `long`, `long long`) which is 32 bit wide. Although according to C standard compilers aren't forced to implement `int32_t` data type, to make the size of integers predictable, `int32_t` type is used in following examples in this tutorial.
+In the following example, `int32_t` data type is used. `int32_t` represents 32 bit signed integer and is defined in `stdint.h` header file for supported compiler. While `int` data type doesn't guarantee about its size, `int32_t` is guaranteed to be 4 bytes long in every compiler that supports it. If your compiler doesn't support `int32_t` data type, try an integer type (`int`, `long`, `long long`) which is 32 bit wide in your environment. Although according to C standard compilers aren't forced to implement `int32_t` data type, to make the size of integers predictable, `int32_t` type is used in following examples in this tutorial.
 
 ```C runnable
 #include <stdio.h>
@@ -22,7 +22,7 @@ int main()
 }
 ```
 
-Notice that each array element is 4 bytes long and takes contiguous memory locations. If `&arr[0]` is 10, then `&arr[1]` is 14, and so on. Do you know that replacing `&arr[i]` with `&i[arr]` also works in the example above? Try this! **Caution:** Try this for fun. Don't put `&i[arr]` in your final code of your coding project as `&i[arr]` is less intuitive to get the address of the `i`-th element in array `arr`.
+Notice that each array element is 4 bytes long and takes contiguous memory locations. If `&arr[0]` is 10, then `&arr[1]` is 14, and so on. Do you know that replacing `&arr[i]` with `&i[arr]` also works in the example above? Try this! **Caution:** Try this for fun. Don't write `&i[arr]` in your final code of your coding project as `&i[arr]` is less intuitive to get the address of the `i`-th element in array `arr`.
 
 It works because for compiler `arr[i]` and `i[arr]` are same operation. Compiler converts `arr[i]` to `arr + i` and similarly `i[arr]` to `i + arr`. Since `arr + i` and `i + arr` produce same result, so do `arr[i]` and `i[arr]`.
 

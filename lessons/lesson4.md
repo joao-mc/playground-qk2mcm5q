@@ -6,24 +6,26 @@ Given an array `arr[ARRAY_SIZE]` we can get the address of the `i`-th element by
 
 #define ARRAY_SIZE 8
 
+void print_array(const int32_t arr[], int num_elements)
+{
+    for (int i = 0; i < num_elements; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+}
+
 int main()
 {
 	int32_t arr[ARRAY_SIZE] = { 22, 33, 44 };
 	int32_t *p = arr + 2;
 
 	printf("Array elements before modification: ");
-	for (int i = 0; i < ARRAY_SIZE; i++)
-	{
-		printf("%d ", arr[i]);
-	}
+	print_array(arr, ARRAY_SIZE);
 
 	*p = 55;
 
 	printf("\nArray elements after modification:  ");
-	for (int i = 0; i < ARRAY_SIZE; i++)
-	{
-		printf("%d ", arr[i]);
-	}
+	print_array(arr, ARRAY_SIZE);
 
 	return 0;
 }
@@ -31,13 +33,21 @@ int main()
 
 In the example above, `p` points to the 3rd element of array using the assignment `p = arr + 2`. The statement `*p = 55;` modifies the contents of the memory location pointer to by `p`, essentially `arr[2]`.
 
-Just like `arr + i` works, `p + i` will work too.
+In the following example, all array elements are modified by pointer:
 
 ```C runnable
 #include <stdio.h>
 #include <stdint.h>
 
 #define ARRAY_SIZE 4
+
+void print_array(const int32_t arr[], int num_elements)
+{
+    for (int i = 0; i < num_elements; i++)
+	{
+		printf("%p | %d\n", arr + i, arr[i]);
+	}
+}
 
 int main()
 {
@@ -49,10 +59,7 @@ int main()
 	}
 
 	printf("Array elements' address and content before modification:\n");
-	for (int i = 0; i < ARRAY_SIZE; i++)
-	{
-		printf("%p | %d\n", arr + i, arr[i]);
-	}
+	print_array(arr, ARRAY_SIZE);
 
 	int32_t *p = arr; /* p points to the first element of arr */
 	for (int i = 0; i < ARRAY_SIZE; i++)
@@ -63,10 +70,7 @@ int main()
 	}
 
 	printf("Array elements' address and content after modification:\n");
-	for (int i = 0; i < ARRAY_SIZE; i++)
-	{
-		printf("%p | %d\n", arr + i, arr[i]);
-	}
+	print_array(arr, ARRAY_SIZE);
 
 	return 0;
 }
@@ -138,6 +142,75 @@ for (int i = 0; i < ARRAY_SIZE; i++)
 	p++;
 }
 
-/* printf("%p\n", p); */ /* Fatal: p points to outside location of declared variable - undefined behaviour */
+/* printf("%d\n", *p); */ /* Fatal: p points to outside location of declared variable - undefined behaviour */
+```
+
+Like `++`, other arithmetic operators (`--`, `+=`, `-=`, `+`, `-`) work on pointers too as long as the pointer stays in the boundary of declared variables.
+
+Following example output a string in reverse order:
+
+```C runnable
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char str[] = "Yet another example";
+	char *p = str + strlen(str); /* p points to the NULL character */
+	p--; /* Now p points to the last character */
+
+	for (int i = 0; i < strlen(str); i++, p--)
+	{
+		printf("%c", *p);
+	}
+
+	return 0;
+}
+```
+
+Two pointers can be subtracted from each other with following conditions:
+
+1. Both pointers will point to elements of same array; or one past the last element of same array
+2. The result of the subtraction must be representable in `ptrdiff_t` data type, which is defined in `stddef.h` and is an integer type.
+
+```C runnable
+#include <stdio.h>
+#include <stddef.h>
+
+#define ARRAY_SIZE 10
+
+int main()
+{
+	int arr[ARRAY_SIZE] = { 0 };
+
+	int *p = arr + 2;
+	int *q = arr + 6;
+
+	ptrdiff_t diff = q - p;
+	printf("Difference %d\n", diff);
+
+	return 0;
+}
+```
+
+Using subtraction operation between two pointers we can get how far the elements from each other in the array. However, care must be taken to make sure that the low address is always gets subtracted from the high address. Otherwise, the behaviour will be undefined as illustrated in the example below:
+
+```C
+#include <stdio.h>
+#include <stddef.h>
+
+#define ARRAY_SIZE 10
+
+int main()
+{
+	int arr[ARRAY_SIZE] = { 0 };
+
+	int *p = arr + 2;
+	int *q = arr + 6;
+
+	/* ptrdiff_t diff = p - q; */ /* Fatal: p - q < 0, it won't point within arr and the result may not fit in ptrdiff_t */
+
+	return 0;
+}
 ```
 

@@ -6,7 +6,7 @@ plan:
   statement: lessons/lesson2.md
 - title: Pointer And Array
   statement: lessons/lesson3.md
-- title: Pointer Arithmetic
+- title: Pointer Arithmetic Part 1
   statement: lessons/lesson4.md
 - title: Pointer Arithmetic
   statement: lessons/lesson5.md
