@@ -68,7 +68,7 @@ void string_to_upper(char *str)
 {
 	while (*str != NULL)
 	{
-		*str = to_upper(*str);
+		*str = toupper(*str);
 		str++;
 	}
 }
