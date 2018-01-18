@@ -23,7 +23,7 @@ int main()
 }
 ```
 
-Using subtraction operation between two pointers we can get how far the elements from each other in the array. However, care must be taken to make sure that the low address is always gets subtracted from the high address. Otherwise, the behaviour will be undefined as illustrated in the example below:
+Using subtraction operation between two pointers we can get how far the elements are from each other in the array. However, care must be taken to make sure that the low address is always gets subtracted from the high address. Otherwise, the behaviour will be undefined as illustrated in the example below:
 
 ```C
 #include <stdio.h>
