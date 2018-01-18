@@ -64,13 +64,13 @@ An array can be passed to a function through pointer. Using the parameter which 
 #include <stdio.h>
 #include <ctype.h>
 
-void string_to_upper(char *str)
+void string_to_upper(char *pstr)
 {
-	while (str != NULL &&  /* str itself cannot be NULL, a NULL pointer cannot be dereferenced */
-	       *str != '\0')   /* Continue only if this is not the end of the string */
+	while (pstr != NULL &&  /* pstr itself cannot be NULL, a NULL pointer cannot be dereferenced */
+	       *pstr != '\0')   /* Continue only if this is not the end of the string */
 	{
-		*str = toupper(*str); /* Converts original array content */
-		str++; /* Points to next character */
+		*pstr = toupper(*pstr); /* Converts original array content */
+		pstr++; /* Points to next character */
 	}
 }
 
@@ -83,4 +83,6 @@ int main()
 	return 0;
 }
 ```
+
+In the above example the character array or C string `str` is passed to `string_to_upper()` function using parameter `pstr` which becomes pointer the the first character of the array. Using `pstr` the whole array is modified. Then `str` is printed in `main()` and the modifications made in `string_to_upper()` is observed.
 
