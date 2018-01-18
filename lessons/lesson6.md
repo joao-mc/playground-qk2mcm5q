@@ -29,15 +29,15 @@ Now consider the following program:
 
 #define ARRAY_SIZE 3
 
-void print_array_size(const int32_t arr[])
+void print_array_size(const int32_t parr[])
 {
-	size_t size = sizeof(arr);
+	size_t size = sizeof(parr);
 	printf("%d bytes\n", size);
 }
 
 int main()
 {
-	int32_t arr[ARRAY_SIZE] = { 0 };
+	int32_t arr[ARRAY_SIZE] = { 22, 33, 44 };
 
 	size_t size = sizeof(arr);
 	printf("%d bytes\n", size);
@@ -48,4 +48,9 @@ int main()
 }
 ```
 
+You'll notice that the sizes are different in `main()` and `print_array_size()` even though _it appears that_ the same 12 byte array `arr` is passed to the `print_array_size()` function. Based on compiler settings, you could also see warning for using `sizeof` operator on parameter `parr`.
+
+When happens is when an array is passed to a function as parameter, it is _converted_ to a pointer to the first element of the array. In the example above, `parr` is indeed a pointer to `&arr[0]` even though array syntax (`[]`) is used.
+
+Hence, `sizeof(parr)` returns the size of a pointer on the platform.
 
