@@ -8,3 +8,5 @@ plan:
   statement: lessons/lesson3.md
 - title: Pointer Arithmetic
   statement: lessons/lesson4.md
+- title: Pointer Arithmetic
+  statement: lessons/lesson5.md
