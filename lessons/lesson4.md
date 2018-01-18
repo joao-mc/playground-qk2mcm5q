@@ -39,6 +39,14 @@ Just like `arr + i` works, `p + i` will work too.
 
 #define ARRAY_SIZE 4
 
+void print_array(const int32_t arr[], int num_elements)
+{
+    for (int i = 0; i < num_elements; i++)
+	{
+		printf("%p | %d\n", arr + i, arr[i]);
+	}
+}
+
 int main()
 {
 	int32_t arr[ARRAY_SIZE] = { 0 };
@@ -49,10 +57,7 @@ int main()
 	}
 
 	printf("Array elements' address and content before modification:\n");
-	for (int i = 0; i < ARRAY_SIZE; i++)
-	{
-		printf("%p | %d\n", arr + i, arr[i]);
-	}
+	print_array(arr, ARRAY_SIZE);
 
 	int32_t *p = arr; /* p points to the first element of arr */
 	for (int i = 0; i < ARRAY_SIZE; i++)
@@ -63,10 +68,7 @@ int main()
 	}
 
 	printf("Array elements' address and content after modification:\n");
-	for (int i = 0; i < ARRAY_SIZE; i++)
-	{
-		printf("%p | %d\n", arr + i, arr[i]);
-	}
+	print_array(arr, ARRAY_SIZE);
 
 	return 0;
 }
