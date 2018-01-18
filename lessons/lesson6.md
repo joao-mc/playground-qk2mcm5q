@@ -29,7 +29,7 @@ Now consider the following program:
 
 #define ARRAY_SIZE 3
 
-void print_array_size(const arr[])
+void print_array_size(const int32_t arr[])
 {
 	size_t size = sizeof(arr);
 	printf("%d bytes\n", size);
