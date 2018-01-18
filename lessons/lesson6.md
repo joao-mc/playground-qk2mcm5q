@@ -66,11 +66,11 @@ An array can be passed to a function through pointer. Using the parameter which 
 
 void string_to_upper(char *str)
 {
-	while (str != NULL &&
-	       *str != NULL)
+	while (str != NULL &&  /* str itself cannot be NULL, a NULL pointer cannot be dereferenced */
+	       *str != '\0')   /* Continue only if this is not the end of the string */
 	{
-		*str = toupper(*str);
-		str++;
+		*str = toupper(*str); /* Converts original array content */
+		str++; /* Points to next character */
 	}
 }
 
