@@ -33,7 +33,7 @@ int main()
 
 In the example above, `p` points to the 3rd element of array using the assignment `p = arr + 2`. The statement `*p = 55;` modifies the contents of the memory location pointer to by `p`, essentially `arr[2]`.
 
-Just like `arr + i` works, `p + i` will work too.
+In the following example, all array elements are modified by pointer:
 
 ```C runnable
 #include <stdio.h>
