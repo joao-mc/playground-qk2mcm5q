@@ -139,7 +139,7 @@ int16_t *p = arr;
 for (int i = 0; i < ARRAY_SIZE; i++)
 {
     printf("%p\n", p);
-	p++;
+    p++;
 }
 
 /* printf("%d\n", *p); */ /* Fatal: p points to outside location of declared variable - undefined behaviour */
