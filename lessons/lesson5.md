@@ -1,4 +1,27 @@
-In last lesson we learnt that integers can be added/subtracted from pointers. Two pointers can also be subtracted from each other if the following conditions are satisfied:
+Like `++`, other arithmetic operators (`--`, `+=`, `-=`, `+`, `-`) work on pointers too as long as the pointer stays in the boundary of declared variables.
+
+Following example output a string in reverse order:
+
+```C runnable
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char str[] = "Yet another example";
+	char *p = str + strlen(str); /* p points to the NULL character */
+	p--; /* Now p points to the last character */
+
+	for (int i = 0; i < strlen(str); i++, p--)
+	{
+		printf("%c", *p);
+	}
+
+	return 0;
+}
+```
+
+Two pointers can also be subtracted from each other if the following conditions are satisfied:
 
 1. Both pointers will point to elements of same array; or one past the last element of same array
 2. The result of the subtraction must be representable in `ptrdiff_t` data type, which is defined in `stddef.h` and is an integer type.
