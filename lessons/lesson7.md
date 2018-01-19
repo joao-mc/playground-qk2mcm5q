@@ -12,18 +12,96 @@ C provides several functions in `stdlib` library for dynamic memory allocation. 
 
 # Memory Allocation With `calloc`
 
-Given a number of objects to be allocated and size of each object `calloc` allocates memory. `calloc` returns a pointer to the first element of the allocated elements. If memory cannot be allocated, `calloc` returns `NULL`.
+Given a number of objects to be allocated and size of each object `calloc` allocates memory. `calloc` returns a pointer to the first element of the allocated elements. If memory cannot be allocated, `calloc` returns `NULL`. If the allocation is successful, `calloc` initializes all bits to 0.
 
 ```C
-int32_t *parr = calloc(100, sizeof(int32_t));
-if (parr == NULL)
+#define NUMBER_OF_ELEMENTS 100
+
+int32_t *parr = calloc(NUMBER_OF_ELEMENTS, sizeof(int32_t));
+
+if (parr == NULL) /* Memory allocation fails */
 {
-	printf("Couldn't allocate memory with calloc");
+	printf("Couldn't allocate memory");
 }
-else
+else  /* Memory allocation successful */
 {
-	printf("Memory allocation successful wih calloc");
+	printf("Memory allocation successful");
 }
 ```
 
-In the example above memory allocation of 100 32 bit integers is requested by `calloc`. If the memory allocation is successful then `parr` will point to the first element of the allocated memory. Using `parr` the allocated memory can be used as array.
+In the example above memory allocation of `NUMBER_OF_ELEMENTS` 32 bit integers is requested by `calloc`. If the memory allocation is successful then `parr` will point to the first element of the allocated memory. Using `parr` the allocated memory can be used as array. All integers in the array pointed to by `parr` is initialized to 0.
+
+# Memory Allocation With `malloc`
+
+`malloc` tries to allocate a given number of bytes and returns a pointer to the first address of the allocated region. If `malloc` fails then a `NULL` pointer is returned. `malloc` doesn't initialize the allocated memory and reading them without initialization invokes undefined behaviour.
+
+The above example of `calloc` can be implemented as below with `malloc`:
+
+```C
+#define NUMBER_OF_ELEMENTS 100
+
+int32_t *parr = malloc(NUMBER_OF_ELEMENTS * sizeof(int32_t));
+
+if (parr == NULL) /* Memory allocation fails */
+{
+	printf("Couldn't allocate memory");
+}
+else  /* Memory allocation successful */
+{
+	for (int i = 0; i < NUMBER_OF_ELEMENTS; i++)
+	{
+		parr[i] = 0;
+	}
+
+	printf("Memory allocation successful");
+}
+```
+
+# Memory Reallocation With `realloc`
+
+Given a pointer to a previously allocated region and a size, `realloc` deallocates previous region, allocates memory having the new size and copies old content into the new region upto the lesser of old and new sizes. `realloc` returns a pointer to the first element of the allocated memory. If new memory allocation fails, old content isn't deallocated, the value of the old content is unchanged and `realloc` return `NULL`.
+
+```C
+#define NUMBER_OF_ELEMENTS 100
+
+int32_t *parr = calloc(NUMBER_OF_ELEMENTS, sizeof(int32_t));
+
+if (parr == NULL) /* Memory allocation fails */
+{
+	printf("Couldn't allocate memory");
+}
+else  /* Memory allocation successful */
+{
+	printf("Memory allocation successful\n");
+
+	parr = realloc(parr, (NUMBER_OF_ELEMENTS / 2) * sizeof(int32_t));
+
+	if (parr == NULL) /* Memory reallocation fails */
+	{
+		printf("Memory reallocation fails");
+	}
+	else /* Memory reallocation successful */
+	{
+		printf("Memory reallocation successful");
+	}
+}
+```
+
+In the above example, `realloc` is used to reduce the array size to half.
+
+If the first parameter to `realloc` is `NULL`, then `realloc` behaves like `malloc`.
+
+# Deallocation Of Allocated Memory With `free`
+
+The function `free` takes a pointer as parameter and deallocates the memory region pointed to by that pointer. The memory region passed to `free` must be previously allocated with `calloc`, `malloc` or `realloc`. If the pointer is `NULL`, no action is taken.
+
+**Warning:** If the pointer passed to `free` doesn't match to a memory region previously allocated by memory management function or is already passed to `free` or `realloc` to deallocate, then the behaviour is undefined.
+
+It's a good practice to set the pointer value to `NULL` once it is passed to `free` to avoid accidentally triggered undefined behaviour.
+
+Here is an example:
+
+```C runnable
+
+```
+
