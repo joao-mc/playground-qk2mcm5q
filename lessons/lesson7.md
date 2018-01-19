@@ -1,6 +1,6 @@
 When a variable is declared compiler automatically allocates memory for it. This is known as **compile time memory allocation** or **static memory allocation**. Memory can be allocated for data variables after the program begins execution. This mechanism is known as **runtime memory allocation** or **dynamic memory allocation**.
 
-The memory allocated at compile time is deallocated (i.e., the memory is _free_d so that the same memory can be reused by other data) automatically at the end of the scope of the variable. In the example below the memory allocated for the variable `i` will be deallocated when the closing brace (`}`) of the statement block is encountered.
+The memory allocated at compile time is deallocated (i.e., the memory is _free_ d so that the same memory can be reused by other data) automatically at the end of the scope of the variable. In the example below the memory allocated for the variable `i` will be deallocated when the closing brace (`}`) of the statement block is encountered.
 
 ```C
 {
