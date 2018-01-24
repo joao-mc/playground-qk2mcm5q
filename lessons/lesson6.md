@@ -23,7 +23,7 @@ Now consider the following program:
 void print_array_size(const int32_t parr[])
 {
 	size_t size = sizeof(parr);
-	printf("%d bytes\n", size);
+	printf("Size of parameter is %d bytes\n", size);
 }
 
 int main()
@@ -31,7 +31,7 @@ int main()
 	int32_t arr[ARRAY_SIZE] = { 22, 33, 44 };
 
 	size_t size = sizeof(arr);
-	printf("%d bytes\n", size);
+	printf("Actual array size is %d bytes\n", size);
 
 	print_array_size(arr);
 
