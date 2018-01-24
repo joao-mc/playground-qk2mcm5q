@@ -24,7 +24,7 @@ int main()
 Two pointers can also be subtracted from each other if the following conditions are satisfied:
 
 1. Both pointers will point to elements of same array; or one past the last element of same array
-2. The result of the subtraction must be representable in `ptrdiff_t` data type, which is defined in `stddef.h` and is an integer type.
+2. The result of the subtraction must be representable in `ptrdiff_t` data type, which is defined in `stddef.h`. `ptrdiff_t` is a type of integer.
 
 ```C runnable
 #include <stdio.h>
