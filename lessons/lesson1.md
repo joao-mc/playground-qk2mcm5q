@@ -19,7 +19,7 @@ int main()
 }
 ```
 
-To output address of a variable, `%p` format specifier is used. How `%p` will display an address is **implementation defined**. It means that the output of `%p` varies from compiler to compiler.
+To output address of a variable, `%p` format specifier is used. How `%p` will display an address is **implementation defined**. It means that the output of `%p` could vary from compiler to compiler.
 
 An address is a non-negative integer. Each time a program is run the variables may or may not be located in same memory locations. Each time you run the program above may or may not result in the same output. But for a specific instance of the running program (also known as process) the variables in the **same scope** will always have same address.
 
