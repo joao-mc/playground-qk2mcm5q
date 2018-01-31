@@ -4,7 +4,7 @@ All code and variables are loaded into memory (usually RAM) and the processor ex
 
 For example, consider a simple program of adding two numbers. When the program will run the processor will save these two numbers in two different memory locations. Adding these numbers can be achieved by adding the contents of two different memory locations.
 
-A memory location where data is stored is the address of that data. In C prepending the character `&` to a variable name results in the address of that variable. Try the following program where `a` is a variable and `&a` is its address:
+A memory location where data is stored is the address of that data. In C address of a variable can be obtained by prepending the character `&` to a variable name. Try the following program where `a` is a variable and `&a` is its address:
 
 ```C runnable
 #include <stdio.h>
