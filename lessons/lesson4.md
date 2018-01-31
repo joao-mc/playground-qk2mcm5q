@@ -31,7 +31,7 @@ int main()
 }
 ```
 
-In the example above, `p` points to the 4th element of array by the assignment `p = arr + 3`. The statement `*p = 66;` modifies the contents of the memory location pointer to by `p`, essentially `arr[3]`.
+In the example above, `p` points to the 4th element of array by the assignment `p = arr + 3`. The statement `*p = 66;` modifies the contents of the memory location pointed to by `p`, essentially `arr[3]`.
 
 In the following example, all array elements are modified by pointer:
 
