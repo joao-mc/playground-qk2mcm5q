@@ -40,9 +40,9 @@ int main()
 	b++;
 	c++;
 
-	printf("\nThe address of a after is %p\n", &a);
-	printf("The address of b after is %p\n", &b);
-	printf("The address of c after is %p\n", &c);
+	printf("\nThe address of a after is  %p\n", &a);
+	printf("The address of b after is  %p\n", &b);
+	printf("The address of c after is  %p\n", &c);
 
 	return 0;
 }
