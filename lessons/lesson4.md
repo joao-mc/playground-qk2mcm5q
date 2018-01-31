@@ -105,7 +105,7 @@ after 3rd iteration : p = 22
 after 4th iteration : p = 26
 ```
 
-This can be verified by another small example with 16 bit integer:
+This can be verified by the following example with 16 bit integer:
 
 ```C runnable
 #include <stdio.h>
@@ -128,7 +128,7 @@ int main()
 }
 ```
 
-Notice that p increments by 2, or `sizeof(int16_t)`, at every iteration.
+Notice that `p` is incremented by 2, or `sizeof(int16_t)`, at every iteration.
 
 **Warning:** When the loop exits in the above example, `p` points to one past the last element of `arr`. That area is outside the declared variables in the program. Accessing that location is undefined behaviour.
 
