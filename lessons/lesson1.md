@@ -50,7 +50,7 @@ int main()
 
 Notice that the addresses of `a`, `b` and `c` variables are same before and after the modification.
 
-However, if the variables are in **differenct scope** then the address may or may not be the same in different execution of that scope. For example, consider the following program where `f()` is called once from `main()` and then from `g()`. Each call to `f()` produces a different scope for its parameter `p`.
+However, if the variables are in **differenct scope** then the addresses may or may not be the same in different execution of that scope. For example, consider the following program where `f()` is called once from `main()` and then from `g()`. Each call to `f()` produces a different scope for its parameter `p`.
 
 ```C runnable
 #include <stdio.h>
