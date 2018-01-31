@@ -17,12 +17,12 @@ void print_array(const int32_t arr[], int num_elements)
 int main()
 {
 	int32_t arr[ARRAY_SIZE] = { 22, 33, 44 };
-	int32_t *p = arr + 2;
+	int32_t *p = arr + 3;
 
 	printf("Array elements before modification: ");
 	print_array(arr, ARRAY_SIZE);
 
-	*p = 55;
+	*p = 66;
 
 	printf("\nArray elements after modification:  ");
 	print_array(arr, ARRAY_SIZE);
@@ -31,7 +31,7 @@ int main()
 }
 ```
 
-In the example above, `p` points to the 3rd element of array using the assignment `p = arr + 2`. The statement `*p = 55;` modifies the contents of the memory location pointer to by `p`, essentially `arr[2]`.
+In the example above, `p` points to the 4th element of array by the assignment `p = arr + 3`. The statement `*p = 66;` modifies the contents of the memory location pointer to by `p`, essentially `arr[3]`.
 
 In the following example, all array elements are modified by pointer:
 
