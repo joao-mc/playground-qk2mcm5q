@@ -57,12 +57,12 @@ However, if the variables are in **differenct scope** then the addresses may or 
 
 void f(int p)
 {
-	printf("The address of p inside f() is %p\n", &p);
+	printf("The address of p inside f() is    %p\n", &p);
 }
 
 void g(int r)
 {
-	printf("The address of r inside g() is %p\n", &r);
+	printf("The address of r inside g() is    %p\n", &r);
 	f(r);
 }
 
