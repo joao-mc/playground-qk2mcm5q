@@ -41,7 +41,7 @@ int main()
 
 You'll notice that the sizes are different in `main()` and `print_array_size()` even though _it appears that_ the same 12 byte array `arr` is passed to the `print_array_size()` function. Based on compiler settings, you could also see warning for using `sizeof` operator on parameter `parr` because `parr` is declared as array.
 
-What happens is when an array is passed to a function as parameter, it is _converted_ to a pointer to the first element of the array. In the example above, `parr` is indeed a pointer to `&arr[0]` even though array syntax (`[]`) is used.
+What happens is when an array is passed to a function as parameter, it is _converted_ to a pointer to the first element of the array. In the example above, `parr` is indeed a pointer to `arr[0]` even though array syntax (`[]`) is used.
 
 Hence, `sizeof(parr)` returns the size of a pointer on the platform. The code above will work the same way if the function prototype is declared as follows:
 
