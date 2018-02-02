@@ -1,4 +1,4 @@
-The `sizeof` operator takes a parameter and returns the size of the parameter in bytes. Following example prints the size of an array with 3 element, each is a 32 bit integer:
+The `sizeof` operator takes a parameter and returns the size of the parameter in bytes. Following example prints the size of an array with 3 elements, each is a 32 bit integer:
 
 ```C
 #define ARRAY_SIZE 3
