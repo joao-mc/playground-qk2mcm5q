@@ -6,7 +6,7 @@ The `sizeof` operator takes a parameter and returns the size of the parameter in
 int32_t arr[ARRAY_SIZE] = { 0 };
 
 size_t size = sizeof(arr);
-printf("Array size %d bytes\n", size);
+printf("Array size %d bytes\n", size); /* Output: Array size 12 bytes */
 ```
 
 The return type of `sizeof` operator is `size_t` which is an integer. The example above will convey the message that the array size is 12 bytes (3 integers, 4 bytes each).
