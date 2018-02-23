@@ -76,7 +76,11 @@ This kind of comparison function is also known as comparator. It has the followi
 int (*compar)(const void *, const void *)
 ```
 
-This function takes two pointers to objects to compare with each other. If the objects are equal, it returns 0. If the first object should be placed _before_ the second object in the sorted array, it returns a negative integer. If the first object should be placed _after_ the second object in the sorted array, it returns a positive integer.
+This function takes two pointers to objects to compare with each other. Requirements for this comparator is as follows:
+
+- If the objects are equal, it will return 0.
+- If the first object should be placed _before_ the second object in the sorted array, it will return a negative integer.
+- If the first object should be placed _after_ the second object in the sorted array, it returns a positive integer.
 
 We'll define two compartors in this example to pass to `qsort` so that the student array can be sorted as we wish.
 
