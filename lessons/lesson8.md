@@ -42,7 +42,7 @@ int main()
 
 What's the point of having a function pointer where we can directly call the function? Sometimes there are multiple similar (same prototype) functions to call and a decision must be made at runtime. Here is a complete example.
 
-# Sorting student database
+# Sorting Student Database
 
 Suppose we want to create a database of students. For simplicity, each student will have a unique id, name and passing year.
 
