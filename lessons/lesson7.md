@@ -85,7 +85,7 @@ else  /* Memory allocation successful */
 }
 ```
 
-In the above example, `realloc` is used to reduce the array size to half.
+In the above example, `realloc` is used to reduce the dynamic array size to half.
 
 If the first parameter to `realloc` is `NULL`, then `realloc` behaves like `malloc`.
 
