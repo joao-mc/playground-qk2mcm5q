@@ -48,13 +48,13 @@ if (parr == NULL) /* Memory allocation fails */
 }
 else  /* Memory allocation successful */
 {
-	for (int i = 0; i < NUMBER_OF_ELEMENTS; i++)
-	{
-		parr[i] = 0;
-	}
+	memset(parr, 0, NUMBER_OF_ELEMENTS * sizeof(parr[0]));
 
 	printf("Memory allocation successful");
 }
+
+To use the function `memset` header file `<string.h>` must be included. Given a pointer and number of bytes, `memset` initializes all bytes to zero.
+
 ```
 
 # Memory Reallocation With `realloc`
