@@ -16,6 +16,27 @@ int (*pf)(short, short) = multiply;
 ^     ^   ^               ^
 |     |   |               function name
 |     |   function parameters inside parentheses
-|     variable name, followed by *, everything enclosed inside parentheses
+|     variable name followed by *, everything enclosed inside parentheses
 function return type
 ```
+
+Once declared, the variable name (`pf` here) can be used as a function:
+
+```C runnable
+#include <stdio.h>
+
+int multiply(short a, short b)
+{
+	return (int)a * (int)b;
+}
+
+int main()
+{
+	int (*pf)(short, short) = multiply;
+
+	printf("Multiplied through function pointer: %d\n", pf(10, 9));
+
+	return 0;
+}
+```
+
