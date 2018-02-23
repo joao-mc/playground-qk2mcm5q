@@ -82,7 +82,7 @@ This function takes two pointers to objects to compare with each other. Requirem
 - If the first object should be placed _before_ the second object in the sorted array, it will return a negative integer.
 - If the first object should be placed _after_ the second object in the sorted array, it will return a positive integer.
 
-We'll define two compartors in this example to pass to `qsort` so that the student array can be sorted as we wish.
+We'll define two comparators in this example to pass to `qsort` so that the student array can be sorted as we wish.
 
 ## Sort by passing year
 
