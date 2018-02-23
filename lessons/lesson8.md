@@ -117,13 +117,9 @@ int sort_by_name(const void* a, const void* b)
 
 		for (int i = 0; i < lena; i++)
 		{
-			if (sa->name[i] < sb->name[i])
+			if (sa->name[i] != sb->name[i])
 			{
-				return -1;
-			}
-			if (sa->name[i] > sb->name[i])
-			{
-				return 1;
+				return sa->name[i] - sb->name[i];
 			}
 		}
 
@@ -133,12 +129,7 @@ int sort_by_name(const void* a, const void* b)
 
 	/* Consider the name with less character to be the lesser of two objects */
 
-	if (lena < lenb)
-	{
-		return -1;
-	}
-
-	return 1;
+	return lena - lenb;
 }
 ```
 
@@ -189,13 +180,9 @@ int sort_by_name(const void* a, const void* b)
 
 		for (int i = 0; i < lena; i++)
 		{
-			if (sa->name[i] < sb->name[i])
+			if (sa->name[i] != sb->name[i])
 			{
-				return -1;
-			}
-			if (sa->name[i] > sb->name[i])
-			{
-				return 1;
+				return sa->name[i] - sb->name[i];
 			}
 		}
 
@@ -205,12 +192,7 @@ int sort_by_name(const void* a, const void* b)
 
 	/* Consider the name with less character to be the lesser of two objects */
 
-	if (lena < lenb)
-	{
-		return -1;
-	}
-
-	return 1;
+	return lena - lenb;
 }
 
 int sort_by_passing_year(const void* a, const void* b)
