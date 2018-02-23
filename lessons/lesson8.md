@@ -11,7 +11,7 @@ int multiply(short a, short b)
 
 To store the address of this function in a function pointer, following syntax is used:
 
-```C
+```
 int (*pf)(short, short) = multiply;
 ^     ^   ^               ^
 |     |   |               function name
