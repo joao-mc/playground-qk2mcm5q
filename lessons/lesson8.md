@@ -15,7 +15,7 @@ To store the address of this function in a function pointer, following syntax is
 int (*pf)(short, short) = multiply;
 ^     ^   ^               ^
 |     |   |               function name
-|     |   function parameters inside parentheses
+|     |   function parameter types inside parentheses
 |     variable name followed by *, everything enclosed inside parentheses
 function return type
 ```
