@@ -40,3 +40,27 @@ int main()
 }
 ```
 
+What's the point of having a function pointer where we can directly call the function? Sometimes there are multiple similar (same prototype) functions to call and a decision must be made at runtime. Here is a complete example.
+
+Suppose we want to create a database of students. For simplicity, each student will have a unique id, name and passing year.
+
+```C
+#define MAX_NAME_SIZE 1000
+
+typedef struct
+{
+	uint32_t id;
+	char name[MAX_NAME_SIZE];
+	uint32_t passing_year;
+} Student;
+```
+
+We declare a database (simply an array will work for us) of 1000 students.
+
+```C
+#define MAX_STD_SIZE 1000
+
+Student std_db[MAX_STD_SIZE];
+```
+
+
