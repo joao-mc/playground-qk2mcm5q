@@ -66,7 +66,7 @@ Student std_db[MAX_STD_SIZE];
 memset(std_db, 0, sizeof(std_db));
 ```
 
-We populate this array somehow (in this example, students will be randomly populated). Now we've a huge collection of students. Looking them one by one for specific information may not be efficient. For example, we may want a list of students sorted by passing year. Or we may want a list of student names sorted by their names for easy lookup.
+We populate this array somehow (in this example, students will be randomly populated). Now we've a collection of students. Looking them one by one for specific information may not be efficient. For example, we may want a list of students sorted by passing year. Or we may want a list of student names sorted by their names for easy lookup.
 
 In this example we're going to sort the student array using `qsort` function available in `stdlib.h` library. But simply calling `qsort` with the array isn't enough because `qsort` has no idea about how to sort two `Student`s. Instead, `qsort` takes a function pointer as a parameter to compare two `Student` objects with one another to determine their position with respect to each other.
 
