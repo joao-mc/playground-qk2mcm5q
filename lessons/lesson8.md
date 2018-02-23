@@ -221,7 +221,7 @@ int main()
 		std_db[i].id = i + 1;
 
 		/* Randomly populate name */
-		int max_name_size = min(MAX_NAME_SIZE, 10);
+		int max_name_size = (MAX_NAME_SIZE < 10 ? MAX_NAME_SIZE : 10);
 		int name_size = rand() % max_name_size + 5;
 		for (int j = 0; j < name_size; j++)
 		{
