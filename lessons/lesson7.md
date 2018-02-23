@@ -52,10 +52,8 @@ else  /* Memory allocation successful */
 
 	printf("Memory allocation successful");
 }
-
-To use the function `memset` header file `<string.h>` must be included. Given a pointer and number of bytes, `memset` initializes all bytes to zero.
-
 ```
+To use the function `memset` header file `<string.h>` must be included. Given a pointer and number of bytes, `memset` initializes all bytes to zero.
 
 # Memory Reallocation With `realloc`
 
