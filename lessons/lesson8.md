@@ -86,7 +86,7 @@ We'll define two compartors in this example to pass to `qsort` so that the stude
 
 ## Sort by passing year
 
-Sort by passing year is easy. The objects pointed to by the void pointers are cast to Student object. Then if the second passing year is subtracted from first passing year the requirement of comparator function is fulfilled.
+Sort by passing year is easy. The objects pointed to by the void pointers are cast to `Student` object. Then if the second passing year is subtracted from first passing year the requirement of comparator function is fulfilled.
 
 ```C
 int sort_by_passing_year(const void* a, const void* b)
